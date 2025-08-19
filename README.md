@@ -10,7 +10,9 @@ plan dzialania:
 -ustawienie pary
 -ustawienie czasu od kiedy sciagnac do kiedy
 -wyliczenie jaki zapas historycznych danych potrzeba do warmupu wszystkich wskaznikow
--waliduj wartosci wskaznikow co 1000 cykli liczenia w trakcie treningu 
+-waliduj wartosci wskaznikow co 1000 cykli liczenia w trakcie treningu
+-trening wlasciwy ( jesli to pierwszy trening ,mozna ustawiac hiperparametry,mozna ustawic target treningu,mozna ustawic poziom )
+-
 
 
 
