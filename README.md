@@ -11,7 +11,7 @@ plan dzialania:
 -ustawienie czasu od kiedy sciagnac do kiedy
 -wyliczenie jaki zapas historycznych danych potrzeba do warmupu wszystkich wskaznikow
 -waliduj wartosci wskaznikow co 1000 cykli liczenia w trakcie treningu
--trening wlasciwy ( jesli to pierwszy trening ,ustawienia do czego bedziemy uzywac modelu,)
+-trening wlasciwy ( jesli to pierwszy trening ,ustawienia do czego bedziemy uzywac modelu,klasyfikacja(wielomianowa lub binarna),regresja(klasyczna,regresja l1 l2,quanitil regresion),chcialbym tez survival analiz oraz zostawic w kodzie miejsce na custom objective(do krzyzowej korelacji)
 -
 
 
