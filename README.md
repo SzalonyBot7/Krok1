@@ -16,9 +16,9 @@ plan dzialania:
 -regresja(klasyczna,regresja l1 l2,quanitil regresion),
 -chcialbym tez survival analiz oraz zostawic w kodzie miejsce na custom objective(do krzyzowej korelacji predykcji)
 -custom metrics ,zeby decydowac o procesie oceny treningu
--parametry wspilne dla wszystkich zastosowan:
+-parametry wspolne dla wszystkich zastosowan:
 
-  "hiperparametry_wspolne": {
+  "hiperparametry_wspolne": 
     "num_leaves": 63,
     "max_depth": -1,
     "learning_rate": 0.02,
@@ -33,33 +33,36 @@ plan dzialania:
     "early_stopping_rounds": 100,
     "verbosity": -1,
     "seed": 42
-  },
+
   
-zakladka do  "binary_classification": {
+zakladka do  "binary_classification": 
     "objective": "binary",
     "metric": ["binary_logloss", "auc"]
-  },
+  ,
   
-zakladka do  "regression": {
+zakladka do  "regression": 
     "objective": "regression",
     "metric": ["l2", "l1"]
-  },
+  ,
   
 zakladka do  "multiclass": {
     "objective": "multiclass",
     "metric": ["multi_logloss", "multi_error"],
     "num_class": 3
-  },
+  ,
   
 zakladka do  "ranking": {
     "objective": "lambdarank",
     "metric": ["ndcg"],
     "label_gain": [0, 1, 2]
-  }
-}
+  
+
 - FORMA TRENINGU:
 DANE:
-- pobierane z binance ,paczki do warmup
-- nastepnie synchronizacja z ustawionym poczatkiem 
-
+- okreslenie parametrow paczki do warmup
+- pobranie okreslonego pakietu(w celu wyliczenia od poczatku wszystkich oczekiwanych wskaznikow i analiz)
+- nastepnie synchronizacja z ustawionym poczatkiem
+- w razie niezgodnosci komunikat co i jak jest nie tak
+- budowa specyfiki treningu (podsumowanie wartosci hiperparametrow,synchronizacji pliku do warmup z danym do fly lerning
+- przygotowanie mechanizmu zapytanie,odpowiedz,liczenie wskaznikow ,budowa pakietu(timestamp,swiece,kierunek wolumenu,reszta wskaznikow wolumenu ,przyplyw odplyw wolumenu liczony w 5,10,15,30,1h,4h,8h,12h,24h, wskazniki TA liczone z(7,14,30,60,120,240,500 z okresu probek)
 
