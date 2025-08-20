@@ -64,5 +64,6 @@ DANE:
 - nastepnie synchronizacja z ustawionym poczatkiem
 - w razie niezgodnosci komunikat co i jak jest nie tak
 - budowa specyfiki treningu (podsumowanie wartosci hiperparametrow,synchronizacji pliku do warmup z danym do fly lerning
-- przygotowanie mechanizmu zapytanie,odpowiedz,liczenie wskaznikow ,budowa pakietu(timestamp,swiece,kierunek wolumenu,reszta wskaznikow wolumenu ,przyplyw odplyw wolumenu liczony w 5,10,15,30,1h,4h,8h,12h,24h, wskazniki TA liczone z(7,14,30,60,120,240,500 z okresu probek)
+- przygotowanie mechanizmu zapytanie,odpowiedz,
+- liczenie wskaznikow ,budowa               -pakietu(timestamp,swiece,kierunek wolumenu,reszta wskaznikow wolumenu ,przyplyw odplyw wolumenu liczony w (5,10,15,30,1h,4h,8h,12h,24h), wskazniki TA liczone z (7,14,30,60,120,240,500 z okresu probek),srednie kroczace rolling window 
 
