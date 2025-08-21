@@ -1,8 +1,8 @@
 # Krok1
 Kroczek po kroku
-koncepcja:trening modeli lightGMB ze sciagnietych swiecach sekundowych i dodanych do nich wskaznikow ,nastepnie stream do postaci mozliwej predykcji.
+koncepcja:trening modeli lightGMB z danych z bufferu w ktorym ze sciagnietych swiec sekundowych beda generowane wskazniki analizy srednie kroczace z roznych interwalow metoda rolling window.
 
-wskazniki maja byc kalkulowane z rollingwindow lub z probek zapewniajac wylacznie do kalkulacji
+
 
 wyliczanie srednich ma sie odbywac roznymi metodami
 
@@ -64,7 +64,20 @@ DANE:
 - nastepnie synchronizacja z ustawionym poczatkiem
 - w razie niezgodnosci komunikat co i jak jest nie tak
 - budowa specyfiki treningu (podsumowanie wartosci hiperparametrow,synchronizacji pliku do warmup z danym do fly lerning
-- przygotowanie mechanizmu zapytanie,o
-- liczenie wskaznikow ,budowa               -pakietu(timestamp,swiece,kierunek wolumenu,reszta wskaznikow wolumenu ,przyplyw odplyw wolumenu liczony w (5,10,15,30,1h,4h,8h,12h,24h multi frame lerning), wskazniki TA liczone z (7,14,30,60,120,240,500 z okresu probek),srednie kroczace rolling window 
-wynik okna kroczcego roznych interwalow jako cechy dla intrrwalu sekundowego ,generowanie scenariuszy formacji zoznaczonymi formacjami dla treningu formacji swiec ,dla interwalow: 1 ,5,15,30m,1,2,3,4,5,6,7,8,9,10,12,24h,2,3,4,5,6,7,8,9,10,12,14,16,18,20,30,40,50d
+- przygotowanie mechanizmu :
+
+MODEL TRENDU up/down  
+- liczenia wskaznikow pakietu (timestamp,swiece,kierunek wolumenu,reszta wskaznikow wolumenu ,przyplyw odplyw wolumenu liczony w (5,10,15,30,1h,4h,8h,12h,24h multi frame lerning), wskazniki TA liczone z (7,14,30,60,120,240,500 z okresu probek),srednie kroczace rolling window 
+wynik okna kroczcego roznych interwalow jako cechy dla intrwalu sekundowego
+
+MODEL FORMACJI SWIECOWYCH:
+target 3-5 swiec wg wzorow
+ -generowanie scenariuszy formacji z oznaczonymi formacjami dla treningu dla interwalow: 1 ,5,15,30m,1,2,3,4,5,6,7,8,9,10,12,24h,2,3,4,5,6,7,8,9,10,12,14,16,18,20,30,40,50d
+-chce zeby w buforze uczacym bylo maksymalnie 10 wierszy FIFO
+
+MODEL WOLUMENU:
+
+-dynamiczna kontrola tresci kolumn pod katem wartosci dla procesu treningu ,mechanizm regulaujacy to RT znaczenie futures dla uczenia
+
+ 
 -custom metrics ,zeby decydowac o procesie oceny treningu
